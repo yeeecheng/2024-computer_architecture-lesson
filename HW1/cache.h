@@ -20,6 +20,7 @@ class cache_block{
 };
 class cache_controller{
     public:
+    
         int hit_count = 0, miss_count = 0;
         string dashboard_content = "";
         /*
@@ -47,19 +48,16 @@ class cache_controller{
         void access_address(string mem_address_hex){
             int mem_byteAddress = stoi(mem_address_hex, 0, 16);
             dashboard_content +=  " --> " + to_string(mem_byteAddress) + " (decimal)\n";
-            // cout << " --> " << mem_byteAddress << " (decimal)\n";
             // number of memory block
             int mem_blockAddress = mem_byteAddress / (block_size * 4);
             dashboard_content += "[memory block number]: " + to_string(mem_blockAddress);
-            // cout << "[memory block number]: " << mem_blockAddress ;
             int loc_set_addr = mem_blockAddress % num_set;
             dashboard_content += " ,[set address]: " + to_string(loc_set_addr);
-            // cout << " ,[set address]: " << loc_set_addr;
-            // get tag
-    
-            int tag = mem_blockAddress >> (get_idx_bit() + block_size);
+
+            // get tag (bytes address / (idx + offset))
+            int tag = mem_blockAddress >> (get_idx_bit() + trans2binary(block_size * 4));
             dashboard_content += " ,[tag]: " + to_string(tag) + "\n";
-            // cout << " ,[tag]: " << tag << "\n";
+
             // Miss
             if(!check_valid(loc_set_addr, tag)){
                 /*
@@ -68,7 +66,9 @@ class cache_controller{
                 2) There's some block's valid is false which can put data here.
                 */
                 bool chk = false;
+                // count LRU times
                 pair<int, int> min_time_idx = {INT32_MAX, -1};
+                // need placed index 
                 int place_idx = -1;
                 for (int i = 0; i < set_degree; i++){
                     // find the block which is minimum time 
@@ -114,12 +114,12 @@ class cache_controller{
             for (int i = 0; i < set_degree; i++){
                 if(cache[loc_set_addr][i].valid && cache[loc_set_addr][i].tag == tag){
                     dashboard_content += "Hit\n";
-                    // cout << "Hit\n";
+
                     return true;
                 }
             }
             dashboard_content += "Miss\n";
-            // cout << "Miss\n";
+
             return false;
         }
 
@@ -131,6 +131,15 @@ class cache_controller{
                 }
             }
             return 0;
+        }
+
+        int trans2binary(int num){
+            int cnt = 0;
+            while(num != 1){
+                num = num >> 1;
+                cnt++;
+            }
+            return cnt;
         }
 
 };
