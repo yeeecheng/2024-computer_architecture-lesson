@@ -47,17 +47,16 @@ class cache_controller{
         }
         void access_address(string mem_address_hex){
             int mem_byteAddress = stoi(mem_address_hex, 0, 16);
-            dashboard_content +=  " --> " + to_string(mem_byteAddress) + " (decimal)\n";
             // number of memory block
             int mem_blockAddress = mem_byteAddress / (block_size * 4);
-            dashboard_content += "[memory block number]: " + to_string(mem_blockAddress);
             int loc_set_addr = mem_blockAddress % num_set;
-            dashboard_content += " ,[set address]: " + to_string(loc_set_addr);
-
             // get tag (bytes address / (idx + offset))
-            int tag = mem_blockAddress >> (get_idx_bit() + trans2binary(block_size * 4));
-            dashboard_content += " ,[tag]: " + to_string(tag) + "\n";
+            int tag = mem_blockAddress / num_set;
 
+            dashboard_content +=  " --> " + to_string(mem_byteAddress) + " (decimal)\n";
+            dashboard_content += "[memory block number]: " + to_string(mem_blockAddress);
+            dashboard_content += " ,[set address]: " + to_string(loc_set_addr);
+            dashboard_content += " ,[tag]: " + to_string(tag) + "\n";
             // Miss
             if(!check_valid(loc_set_addr, tag)){
                 /*
@@ -121,25 +120,6 @@ class cache_controller{
             dashboard_content += "Miss\n";
 
             return false;
-        }
-
-        int get_idx_bit(){
-            bitset<32> idx_bit(set_degree);
-            for (int i = 31; i >= 0; i--){
-                if(idx_bit[i] == 1){
-                    return i ;
-                }
-            }
-            return 0;
-        }
-
-        int trans2binary(int num){
-            int cnt = 0;
-            while(num != 1){
-                num = num >> 1;
-                cnt++;
-            }
-            return cnt;
         }
 
 };

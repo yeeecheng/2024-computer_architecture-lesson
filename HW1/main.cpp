@@ -7,8 +7,8 @@ using namespace std;
 
 int main(int argc, char* argv[]){
     string file_name = argv[1];
-    
-    int cache_size = stoi(argv[2]), block_size = stoi(argv[3]), set_degree = stoi(argv[4]);
+
+    int  cache_size = stoi(argv[2]), block_size = stoi(argv[3]), set_degree = stoi(argv[4]);
     cache_controller cache = cache_controller(cache_size, block_size, set_degree);
     // file read
     ifstream infile;
@@ -27,7 +27,7 @@ int main(int argc, char* argv[]){
     // file write
     ofstream outfile;
     string save_path = "./out/";
-    outfile.open(save_path + to_string(cache_size) + "_" + to_string(block_size) + "_" + to_string(set_degree) + ".txt");
+    outfile.open(save_path + to_string(cache_size) + "_" + to_string(block_size * 4) + "_" + to_string(set_degree) + ".txt");
     outfile << cache.dashboard_content;
     outfile.close();
     return 0;
