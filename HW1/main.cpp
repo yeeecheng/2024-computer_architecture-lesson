@@ -15,7 +15,7 @@ int main(int argc, char* argv[]){
     infile.open(file_name);
     string ss;
     while(infile >> ss){
-        cache.dashboard_content += "bytes address: " + ss + " (hex)"; 
+        
         cache.access_address(ss);
         cache.dashboard_content += "--------------------------------------------------------\n"; 
     }
