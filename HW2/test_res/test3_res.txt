@@ -1,13 +1,13 @@
-load ./sample_data/sample3.txt
+load ./test_data/test3.txt
 Cycle 1
 Instruction          Issue Comp  Result
 L.D F6, 8(R2)        1     -1    -1    
 L.D F2, 40(R3)       -1    -1    -1    
 ADD.D F4, F2, F6     -1    -1    -1    
 DIV.D F8, F0, F4     -1    -1    -1    
-SUB.D F6, F6, F2     -1    -1    -1    
-MUL.D F10, F6, F4    -1    -1    -1    
-S.D F10, 40(R3)      -1    -1    -1    
+SUB.D F0, F6, F2     -1    -1    -1    
+MUL.D F12, F6, F4    -1    -1    -1    
+S.D F12, 40(R3)      -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -42,9 +42,9 @@ L.D F6, 8(R2)        1     -1    -1
 L.D F2, 40(R3)       2     -1    -1    
 ADD.D F4, F2, F6     -1    -1    -1    
 DIV.D F8, F0, F4     -1    -1    -1    
-SUB.D F6, F6, F2     -1    -1    -1    
-MUL.D F10, F6, F4    -1    -1    -1    
-S.D F10, 40(R3)      -1    -1    -1    
+SUB.D F0, F6, F2     -1    -1    -1    
+MUL.D F12, F6, F4    -1    -1    -1    
+S.D F12, 40(R3)      -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -79,9 +79,9 @@ L.D F6, 8(R2)        1     3     -1
 L.D F2, 40(R3)       2     -1    -1    
 ADD.D F4, F2, F6     3     -1    -1    
 DIV.D F8, F0, F4     -1    -1    -1    
-SUB.D F6, F6, F2     -1    -1    -1    
-MUL.D F10, F6, F4    -1    -1    -1    
-S.D F10, 40(R3)      -1    -1    -1    
+SUB.D F0, F6, F2     -1    -1    -1    
+MUL.D F12, F6, F4    -1    -1    -1    
+S.D F12, 40(R3)      -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -116,9 +116,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     -1    
 ADD.D F4, F2, F6     3     -1    -1    
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     -1    -1    -1    
-MUL.D F10, F6, F4    -1    -1    -1    
-S.D F10, 40(R3)      -1    -1    -1    
+SUB.D F0, F6, F2     -1    -1    -1    
+MUL.D F12, F6, F4    -1    -1    -1    
+S.D F12, 40(R3)      -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -153,9 +153,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     -1    -1    
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     -1    -1    
-MUL.D F10, F6, F4    -1    -1    -1    
-S.D F10, 40(R3)      -1    -1    -1    
+SUB.D F0, F6, F2     5     -1    -1    
+MUL.D F12, F6, F4    -1    -1    -1    
+S.D F12, 40(R3)      -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -171,7 +171,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1001 -1002 -1004 0     0     0     0     0     0     0     0     0     0     0     
+-1002 0     -1001 0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
 1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
@@ -190,9 +190,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     -1    -1    
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     -1    -1    
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      -1    -1    -1    
+SUB.D F0, F6, F2     5     -1    -1    
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -200,7 +200,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 1     Add2      -1002       1     SUB.D   1   1   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 -1    Mul1      -1004       1     DIV.D   1   0   0       -1001   
--1    Mul2      -1005       1     MUL.D   0   0   -1002   -1001   
+-1    Mul2      -1005       1     MUL.D   1   0   0       -1001   
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 -1    Store1    -1008       0             0   0   0       0       
@@ -208,7 +208,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1001 -1002 -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+-1002 0     -1001 0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
 1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
@@ -227,9 +227,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     -1    
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     -1    
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     -1    -1    
+SUB.D F0, F6, F2     5     7     -1    
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -237,7 +237,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 0     Add2      -1002       1     SUB.D   1   1   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 -1    Mul1      -1004       1     DIV.D   1   0   0       -1001   
--1    Mul2      -1005       1     MUL.D   0   0   -1002   -1001   
+-1    Mul2      -1005       1     MUL.D   1   0   0       -1001   
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 1     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -245,7 +245,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1001 -1002 -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+-1002 0     -1001 0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
 1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
@@ -264,9 +264,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -274,7 +274,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 40    Mul1      -1004       1     DIV.D   1   2   0       0       
-10    Mul2      -1005       1     MUL.D   0   2   0       0       
+10    Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -282,10 +282,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -301,9 +301,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -311,7 +311,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 39    Mul1      -1004       1     DIV.D   1   2   0       0       
-9     Mul2      -1005       1     MUL.D   0   2   0       0       
+9     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -319,10 +319,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -338,9 +338,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -348,7 +348,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 38    Mul1      -1004       1     DIV.D   1   2   0       0       
-8     Mul2      -1005       1     MUL.D   0   2   0       0       
+8     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -356,10 +356,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -375,9 +375,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -385,7 +385,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 37    Mul1      -1004       1     DIV.D   1   2   0       0       
-7     Mul2      -1005       1     MUL.D   0   2   0       0       
+7     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -393,10 +393,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -412,9 +412,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -422,7 +422,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 36    Mul1      -1004       1     DIV.D   1   2   0       0       
-6     Mul2      -1005       1     MUL.D   0   2   0       0       
+6     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -430,10 +430,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -449,9 +449,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -459,7 +459,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 35    Mul1      -1004       1     DIV.D   1   2   0       0       
-5     Mul2      -1005       1     MUL.D   0   2   0       0       
+5     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -467,10 +467,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -486,9 +486,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -496,7 +496,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 34    Mul1      -1004       1     DIV.D   1   2   0       0       
-4     Mul2      -1005       1     MUL.D   0   2   0       0       
+4     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -504,10 +504,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -523,9 +523,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -533,7 +533,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 33    Mul1      -1004       1     DIV.D   1   2   0       0       
-3     Mul2      -1005       1     MUL.D   0   2   0       0       
+3     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -541,10 +541,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -560,9 +560,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -570,7 +570,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 32    Mul1      -1004       1     DIV.D   1   2   0       0       
-2     Mul2      -1005       1     MUL.D   0   2   0       0       
+2     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -578,10 +578,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -597,9 +597,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     -1    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     -1    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -607,7 +607,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 31    Mul1      -1004       1     DIV.D   1   2   0       0       
-1     Mul2      -1005       1     MUL.D   0   2   0       0       
+1     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -615,10 +615,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -634,9 +634,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    -1    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    -1    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -644,7 +644,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 30    Mul1      -1004       1     DIV.D   1   2   0       0       
-0     Mul2      -1005       1     MUL.D   0   2   0       0       
+0     Mul2      -1005       1     MUL.D   1   2   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
 0     Store1    -1008       1     S.D     0   0   0       -1005   
@@ -652,10 +652,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     -1004 -1005 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     1     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -671,9 +671,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     -1    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -684,7 +684,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 -1    Mul2      -1005       0             0   0   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
-0     Store1    -1008       1     S.D     0   0   0       0       
+0     Store1    -1008       1     S.D     0   2   0       0       
 -1    Store2    -1009       0             0   0   0       0       
 ----------------------------------------
 Register Result Status
@@ -692,7 +692,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -708,9 +708,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -729,7 +729,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -737,7 +737,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 21
 Instruction          Issue Comp  Result
@@ -745,9 +745,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -766,7 +766,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -774,7 +774,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 22
 Instruction          Issue Comp  Result
@@ -782,9 +782,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -803,7 +803,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -811,7 +811,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 23
 Instruction          Issue Comp  Result
@@ -819,9 +819,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -840,7 +840,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -848,7 +848,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 24
 Instruction          Issue Comp  Result
@@ -856,9 +856,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -877,7 +877,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -885,7 +885,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 25
 Instruction          Issue Comp  Result
@@ -893,9 +893,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -914,7 +914,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -922,7 +922,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 26
 Instruction          Issue Comp  Result
@@ -930,9 +930,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -951,7 +951,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -959,7 +959,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 27
 Instruction          Issue Comp  Result
@@ -967,9 +967,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -988,7 +988,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -996,7 +996,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 28
 Instruction          Issue Comp  Result
@@ -1004,9 +1004,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1025,7 +1025,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1033,7 +1033,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 29
 Instruction          Issue Comp  Result
@@ -1041,9 +1041,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1062,7 +1062,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1070,7 +1070,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 30
 Instruction          Issue Comp  Result
@@ -1078,9 +1078,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1099,7 +1099,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1107,7 +1107,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 31
 Instruction          Issue Comp  Result
@@ -1115,9 +1115,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1136,7 +1136,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1144,7 +1144,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 32
 Instruction          Issue Comp  Result
@@ -1152,9 +1152,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1173,7 +1173,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1181,7 +1181,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 33
 Instruction          Issue Comp  Result
@@ -1189,9 +1189,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1210,7 +1210,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1218,7 +1218,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 34
 Instruction          Issue Comp  Result
@@ -1226,9 +1226,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1247,7 +1247,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1255,7 +1255,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 35
 Instruction          Issue Comp  Result
@@ -1263,9 +1263,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1284,7 +1284,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1292,7 +1292,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 36
 Instruction          Issue Comp  Result
@@ -1300,9 +1300,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1321,7 +1321,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1329,7 +1329,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 37
 Instruction          Issue Comp  Result
@@ -1337,9 +1337,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1358,7 +1358,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1366,7 +1366,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 38
 Instruction          Issue Comp  Result
@@ -1374,9 +1374,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1395,7 +1395,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1403,7 +1403,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 39
 Instruction          Issue Comp  Result
@@ -1411,9 +1411,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1432,7 +1432,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1440,7 +1440,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 40
 Instruction          Issue Comp  Result
@@ -1448,9 +1448,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1469,7 +1469,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1477,7 +1477,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 41
 Instruction          Issue Comp  Result
@@ -1485,9 +1485,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1506,7 +1506,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1514,7 +1514,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 42
 Instruction          Issue Comp  Result
@@ -1522,9 +1522,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1543,7 +1543,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1551,7 +1551,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 43
 Instruction          Issue Comp  Result
@@ -1559,9 +1559,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1580,7 +1580,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1588,7 +1588,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 44
 Instruction          Issue Comp  Result
@@ -1596,9 +1596,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1617,7 +1617,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1625,7 +1625,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 45
 Instruction          Issue Comp  Result
@@ -1633,9 +1633,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1654,7 +1654,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1662,7 +1662,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 46
 Instruction          Issue Comp  Result
@@ -1670,9 +1670,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1691,7 +1691,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1699,7 +1699,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 47
 Instruction          Issue Comp  Result
@@ -1707,9 +1707,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     -1    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1728,7 +1728,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1736,7 +1736,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 48
 Instruction          Issue Comp  Result
@@ -1744,9 +1744,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     48    -1    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1765,7 +1765,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     1     1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     1     1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1773,7 +1773,7 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------
 Cycle 49
 Instruction          Issue Comp  Result
@@ -1781,9 +1781,9 @@ L.D F6, 8(R2)        1     3     4
 L.D F2, 40(R3)       2     4     5     
 ADD.D F4, F2, F6     3     7     8     
 DIV.D F8, F0, F4     4     48    49    
-SUB.D F6, F6, F2     5     7     8     
-MUL.D F10, F6, F4    6     18    19    
-S.D F10, 40(R3)      7     8     20    
+SUB.D F0, F6, F2     5     7     8     
+MUL.D F12, F6, F4    6     18    19    
+S.D F12, 40(R3)      7     8     20    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1802,7 +1802,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     2     1     0     1     0.5   1     0     1     1     1     1     1     
+0     1     1     1     2     1     1     1     0.5   1     1     1     2     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1810,5 +1810,5 @@ R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31
 0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
 ----------------------------------------
 M0  M1  M2  M3  M4  M5  M6  M7  
-1   1   1   1   1   0   1   1   
+1   1   1   1   1   2   1   1   
 ----------------------------------------

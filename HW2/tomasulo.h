@@ -310,7 +310,7 @@ class Tomasulo{
 
         void Init_Reg(){
             int_reg_.resize(32, 0);
-            int_reg_[1] = 32;
+            int_reg_[1] = 16;
             f_reg_.resize(16, (double)1.0);
         }
 

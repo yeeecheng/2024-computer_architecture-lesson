@@ -1,12 +1,12 @@
-load ./sample_data/sample6.txt
+load ./test_data/test5.txt
 Cycle 1
 Instruction          Issue Comp  Result
 L.D F0, 0(R1)        1     -1    -1    
 L.D F2, 0(R0)        -1    -1    -1    
 DIV.D F4, F0, F2     -1    -1    -1    
 DIV.D F8, F6, F4     -1    -1    -1    
-SUB.D F8, F0, F2     -1    -1    -1    
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -41,8 +41,8 @@ L.D F0, 0(R1)        1     -1    -1
 L.D F2, 0(R0)        2     -1    -1    
 DIV.D F4, F0, F2     -1    -1    -1    
 DIV.D F8, F6, F4     -1    -1    -1    
-SUB.D F8, F0, F2     -1    -1    -1    
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -77,8 +77,8 @@ L.D F0, 0(R1)        1     3     -1
 L.D F2, 0(R0)        2     -1    -1    
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     -1    -1    -1    
-SUB.D F8, F0, F2     -1    -1    -1    
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -113,8 +113,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     -1    
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     -1    -1    -1    
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -149,12 +149,12 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     -1    -1    
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
-2     Add1      -1001       1     SUB.D   1   1   0       0       
+-1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 40    Mul1      -1004       1     DIV.D   1   1   0       0       
@@ -166,7 +166,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     -1001 0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
 1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
@@ -185,12 +185,12 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     -1    -1    
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
-1     Add1      -1001       1     SUB.D   1   1   0       0       
+-1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 39    Mul1      -1004       1     DIV.D   1   1   0       0       
@@ -202,7 +202,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     -1001 0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
 1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
@@ -221,12 +221,12 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     -1    
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
-0     Add1      -1001       1     SUB.D   1   1   0       0       
+-1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
 38    Mul1      -1004       1     DIV.D   1   1   0       0       
@@ -238,7 +238,7 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     -1001 0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
 1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
@@ -257,8 +257,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -274,10 +274,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -293,8 +293,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -310,10 +310,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -329,8 +329,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -346,10 +346,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -365,8 +365,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -382,10 +382,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -401,8 +401,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -418,10 +418,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -437,8 +437,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -454,10 +454,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -473,8 +473,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -490,10 +490,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -509,8 +509,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -526,10 +526,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -545,8 +545,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -562,10 +562,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -581,8 +581,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -598,10 +598,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -617,8 +617,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -634,10 +634,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -653,8 +653,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -670,10 +670,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -689,8 +689,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -706,10 +706,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -725,8 +725,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -742,10 +742,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -761,8 +761,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -778,10 +778,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -797,8 +797,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -814,10 +814,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -833,8 +833,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -850,10 +850,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -869,8 +869,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -886,10 +886,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -905,8 +905,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -922,10 +922,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -941,8 +941,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -958,10 +958,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -977,8 +977,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -994,10 +994,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1013,8 +1013,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1030,10 +1030,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1049,8 +1049,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1066,10 +1066,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1085,8 +1085,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1102,10 +1102,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1121,8 +1121,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1138,10 +1138,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1157,8 +1157,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1174,10 +1174,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1193,8 +1193,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1210,10 +1210,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1229,8 +1229,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1246,10 +1246,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1265,8 +1265,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1282,10 +1282,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1301,8 +1301,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1318,10 +1318,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1337,8 +1337,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1354,10 +1354,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1373,8 +1373,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1390,10 +1390,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1409,8 +1409,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1426,10 +1426,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1445,8 +1445,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1462,10 +1462,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1481,8 +1481,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1498,10 +1498,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1517,8 +1517,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1534,10 +1534,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1553,8 +1553,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     -1    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1570,10 +1570,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1589,8 +1589,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    -1    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1606,10 +1606,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     -1004 0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     -1004 0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1625,8 +1625,8 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    -1    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -1642,10 +1642,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1005 0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1661,15 +1661,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     -1    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-40    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 39    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -1678,10 +1678,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1005 -1004 0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1697,15 +1697,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
--1    Add1      -1001       0             0   0   0       0       
+2     Add1      -1001       1     SUB.D   1   1   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-39    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 38    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -1714,10 +1714,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1001 -1004 0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1733,15 +1733,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    -1    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
--1    Add1      -1001       0             0   0   0       0       
+1     Add1      -1001       1     SUB.D   1   1   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-38    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 37    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -1750,10 +1750,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1001 -1004 0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1769,15 +1769,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    -1    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
--1    Add1      -1001       0             0   0   0       0       
+0     Add1      -1001       1     SUB.D   1   1   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-37    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 36    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -1786,10 +1786,10 @@ Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk
 ----------------------------------------
 Register Result Status
 F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
-0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+0     0     0     0     -1001 -1004 0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
@@ -1805,15 +1805,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-36    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 35    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -1841,15 +1841,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-35    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 34    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -1877,15 +1877,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-34    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 33    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -1913,15 +1913,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-33    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 32    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -1949,15 +1949,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-32    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 31    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -1985,15 +1985,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-31    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 30    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2021,15 +2021,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-30    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 29    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2057,15 +2057,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-29    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 28    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2093,15 +2093,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-28    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 27    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2129,15 +2129,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-27    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 26    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2165,15 +2165,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-26    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 25    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2201,15 +2201,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-25    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 24    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2237,15 +2237,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-24    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 23    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2273,15 +2273,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-23    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 22    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2309,15 +2309,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-22    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 21    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2345,15 +2345,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-21    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 20    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2381,15 +2381,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-20    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 19    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2417,15 +2417,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-19    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 18    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2453,15 +2453,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-18    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 17    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2489,15 +2489,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-17    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 16    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2525,15 +2525,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-16    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 15    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2561,15 +2561,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-15    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 14    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2597,15 +2597,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-14    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 13    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2633,15 +2633,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-13    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 12    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2669,15 +2669,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-12    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 11    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2705,15 +2705,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-11    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 10    Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2741,15 +2741,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-10    Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 9     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2777,15 +2777,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-9     Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 8     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2813,15 +2813,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-8     Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 7     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2849,15 +2849,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-7     Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 6     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2885,15 +2885,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-6     Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 5     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2921,15 +2921,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-5     Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 4     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2957,15 +2957,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-4     Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 3     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -2993,15 +2993,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-3     Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 2     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -3029,15 +3029,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     -1    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-2     Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 1     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -3065,15 +3065,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     86    -1    
-SUB.D F8, F0, F2     5     7     8     
 DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-1     Mul1      -1004       1     DIV.D   0   1   0       0       
+-1    Mul1      -1004       1     DIV.D   0   1   -1005   0       
 0     Mul2      -1005       1     DIV.D   1   1   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -3101,15 +3101,15 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     86    87    
-SUB.D F8, F0, F2     5     7     8     
-DIV.D F10, F8, F4    47    87    -1    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
 -1    Add1      -1001       0             0   0   0       0       
 -1    Add2      -1002       0             0   0   0       0       
 -1    Add3      -1003       0             0   0   0       0       
-0     Mul1      -1004       1     DIV.D   0   1   0       0       
+40    Mul1      -1004       1     DIV.D   1   1   0       0       
 -1    Mul2      -1005       0             0   0   0       0       
 -1    load1     -1006       0             0   0   0       0       
 -1    load2     -1007       0             0   0   0       0       
@@ -3137,8 +3137,1448 @@ L.D F0, 0(R1)        1     3     4
 L.D F2, 0(R0)        2     4     5     
 DIV.D F4, F0, F2     3     45    46    
 DIV.D F8, F6, F4     4     86    87    
-SUB.D F8, F0, F2     5     7     8     
-DIV.D F10, F8, F4    47    87    88    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+39    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 89
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+38    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 90
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+37    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 91
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+36    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 92
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+35    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 93
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+34    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 94
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+33    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 95
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+32    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 96
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+31    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 97
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+30    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 98
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+29    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 99
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+28    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 100
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+27    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 101
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+26    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 102
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+25    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 103
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+24    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 104
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+23    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 105
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+22    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 106
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+21    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 107
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+20    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 108
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+19    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 109
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+18    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 110
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+17    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 111
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+16    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 112
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+15    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 113
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+14    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 114
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+13    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 115
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+12    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 116
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+11    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 117
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+10    Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 118
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+9     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 119
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+8     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 120
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+7     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 121
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+6     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 122
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+5     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 123
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+4     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 124
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+3     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 125
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+2     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 126
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    -1    -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+1     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 127
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    127   -1    
+SUB.D F8, F0, F2     48    50    51    
+----------------------------------------
+Reservation Station
+Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
+-1    Add1      -1001       0             0   0   0       0       
+-1    Add2      -1002       0             0   0   0       0       
+-1    Add3      -1003       0             0   0   0       0       
+0     Mul1      -1004       1     DIV.D   1   1   0       0       
+-1    Mul2      -1005       0             0   0   0       0       
+-1    load1     -1006       0             0   0   0       0       
+-1    load2     -1007       0             0   0   0       0       
+-1    Store1    -1008       0             0   0   0       0       
+-1    Store2    -1009       0             0   0   0       0       
+----------------------------------------
+Register Result Status
+F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F26   F28   F30   
+0     0     0     0     0     -1004 0     0     0     0     0     0     0     0     0     0     
+----------------------------------------
+F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
+----------------------------------------
+R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
+0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R31 
+0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   
+----------------------------------------
+M0  M1  M2  M3  M4  M5  M6  M7  
+1   1   1   1   1   1   1   1   
+----------------------------------------
+Cycle 128
+Instruction          Issue Comp  Result
+L.D F0, 0(R1)        1     3     4     
+L.D F2, 0(R0)        2     4     5     
+DIV.D F4, F0, F2     3     45    46    
+DIV.D F8, F6, F4     4     86    87    
+DIV.D F10, F8, F4    47    127   128   
+SUB.D F8, F0, F2     48    50    51    
 ----------------------------------------
 Reservation Station
 Time  Name      func_unit   Busy  Op      Vj  Vk  Qj      Qk      
@@ -3157,7 +4597,7 @@ F0    F2    F4    F6    F8    F10   F12   F14   F16   F18   F20   F22   F24   F2
 0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     
 ----------------------------------------
 F0    F1    F2    F3    F4    F5    F6    F7    F8    F9    F10   F11   F12   F13   F14   F15   
-1     1     1     1     1     1     1     1     0     1     0     1     1     1     1     1     
+1     1     1     1     1     1     1     1     0     1     1     1     1     1     1     1     
 ----------------------------------------
 R0  R1  R2  R3  R4  R5  R6  R7  R8  R9  R10 R11 R12 R13 R14 R15 
 0   16  0   0   0   0   0   0   0   0   0   0   0   0   0   0   
