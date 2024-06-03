@@ -266,7 +266,7 @@ class Tomasulo{
         void Show_FRegister(){
             
             for (int i = 0; i < f_reg_.size(); i++){
-                cout << setw(6) << "F" + to_string(i);
+                cout << setw(6) << "F" + to_string(i*2);
             }
             cout << "\n";
             for (int i = 0; i < f_reg_.size(); i++){
@@ -396,7 +396,7 @@ class Tomasulo{
                 // update to empty function unit.
                 register_result_status_.set_qi(f_reg_idx, 0);
                 // save result to f_register.
-                f_reg_[f_reg_idx] = instruction.res_;
+                f_reg_[f_reg_idx / 2] = instruction.res_;
             }
             // check whether find the reservation station needing to write result. 
 
@@ -506,7 +506,7 @@ class Tomasulo{
                 int rt_reg_func_unit = register_result_status_.get_qi(instruction_unit.rt_);
                 instruction.qk_ = rt_reg_func_unit;
                 if(rt_reg_func_unit == 0){
-                    instruction.vk_ = f_reg_[instruction_unit.rt_];
+                    instruction.vk_ = f_reg_[instruction_unit.rt_ / 2];
                     instruction.qk_ = 0;
                 }
                 // set vj, qj value
@@ -519,7 +519,7 @@ class Tomasulo{
                 
                 instruction.qj_ = rs_reg_func_unit;
                 if(rs_reg_func_unit == 0){
-                    instruction.vj_ = f_reg_[instruction_unit.rs_];
+                    instruction.vj_ = f_reg_[instruction_unit.rs_ / 2];
                     instruction.qj_ = 0;
                 }
 
@@ -528,7 +528,7 @@ class Tomasulo{
                 
                 instruction.qk_ = rt_reg_func_unit;
                 if(rt_reg_func_unit == 0){
-                    instruction.vk_ = f_reg_[instruction_unit.rt_];
+                    instruction.vk_ = f_reg_[instruction_unit.rt_ / 2];
                     instruction.qk_ = 0;
                 }
                 register_result_status_.set_qi(instruction_unit.rd_, function_unit);
